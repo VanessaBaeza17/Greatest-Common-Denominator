@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int gcd(int num1, int num2){
+
+  int nuevo = 0;
+  if (num1 < num2){
+    nuevo = num1;
+    num1 = num2;
+    num2 = nuevo;
+  }
+  while (num2 != 0){
+    nuevo = num1 % num2;
+    num1 = num2;
+    num2 = nuevo;
+  }
+  return num1;
+}
+
+int main(){
+
+  int num1, num2;
+
+cout << "Give me a number " << endl;
+cin >> num1;
+cout << "Give me another number: " << endl;
+cin >> num2;
+
+cout << "The GCD is: " << gcd(num1, num2) << endl;
+
+return 0;
+}
